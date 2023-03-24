@@ -1,4 +1,4 @@
-puts "Seeding...."
+puts "Watch me seed!!"
 
 require 'faker'
 
@@ -28,4 +28,4 @@ end
 end
 
 
-puts "Seeding Done!"
+puts "fin!"
