@@ -1,31 +1,23 @@
-puts "Watch me seed!!"
-
-require 'faker'
-
-# Create restaurants
+puts 'Seeding 🦸🏿‍♂️🦸🏿‍♀️...'
 10.times do
-  Restaurant.create(
-    name: Faker::Restaurant.name,
-    address: Faker::Address.full_address
-  )
+  Hero.create([{ name: Faker::Name.name, super_name: Faker::Superhero.name }])
 end
 
-# Create pizzas
-10.times do
-  Pizza.create(
-    name: Faker::Food.dish,
-    ingredients: Faker::Food.ingredients
-  )
-end
-
-# Create restaurant pizzas
+puts 'Seeding 💪🏿...'
 20.times do
-  RestaurantPizza.create(
-    restaurant: Restaurant.all.sample,
-    pizza: Pizza.all.sample,
-    price: rand(1.0..30.0).round(2)
+  Power.create(
+    [
+      {
+        name: Faker::Superhero.power,
+        description: Faker::Quote.yoda,
+      },
+    ],
   )
 end
 
-
-puts "fin!"
+puts 'Seeding 🦸🏿‍♂️💪🏿...'
+10.times do
+  HeroPower.create(
+    [{ strength: %w[Strong Weak Average].sample, hero_id: rand(1..10), power_id: rand(1..20) }],
+  )
+end

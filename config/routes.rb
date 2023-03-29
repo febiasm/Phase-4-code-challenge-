@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  # Restaurants routes
-  get "/restaurants", to: "restaurants#index"
-  get "/restaurants/:id", to: "restaurants#show"
-  delete "/restaurants/:id", to: "restaurants#destroy"
-
-  # Pizzas routes
-  get "/pizzas", to: "pizzas#index"
-
-  # RestaurantPizzas routes
-  post "/restaurant_pizzas", to: "restaurant_pizzas#create"
+  resources :hero_powers, only: [:create]
+  resources :powers, only: %i[index show update]
+  resources :heros, only: %i[index show]
 end
